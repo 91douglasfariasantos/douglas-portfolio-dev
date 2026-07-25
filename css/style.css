@@ -1,0 +1,174 @@
+/* ============================================================
+     TOKENS — identidade azul/branco do Douglas
+  ============================================================ */
+  :root{
+    --bg:        #060B18;
+    --bg-elev:   #0D1730;
+    --ink:       #F2F5FF;
+    --ink-dim:   #7C8FC4;
+    --line:      #1B2A52;
+    --accent:    #3B7BFF;
+    --nav-h:     76px;
+  }
+  [data-theme="light"]{
+    --bg:        #EEF3FF;
+    --bg-elev:   #FFFFFF;
+    --ink:       #0B1A3C;
+    --ink-dim:   #4E6296;
+    --line:      #C6D6FA;
+    --accent:    #2255E8;
+  }
+ 
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    min-height:180vh; /* só pra visualizar o scroll, remova no seu site */
+    transition:background .35s ease, color .35s ease;
+  }
+ 
+  .demo{ max-width:720px; margin:0 auto; padding:140px 24px; color:var(--ink-dim); line-height:1.7; }
+  .demo h1{ font-family:'Space Grotesk',sans-serif; color:var(--ink); font-size:2rem; margin-bottom:8px; }
+ 
+  /* ============================================================
+     NAVBAR (Bootstrap .navbar por baixo)
+  ============================================================ */
+  #nbar{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    min-height:var(--nav-h);
+    background:color-mix(in srgb, var(--bg) 78%, transparent) !important;
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line);
+  }
+ 
+  /* --- Logo / monograma ------------------------------------- */
+  .brand{
+    display:flex; align-items:center; gap:12px;
+    text-decoration:none; color:var(--ink) !important;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600; font-size:1.05rem; letter-spacing:.01em;
+  }
+  .mono{
+    width:38px; height:38px; flex:none;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--accent); color:#FFFFFF;
+    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem;
+    border-radius:9px;
+    transform:rotate(-6deg);
+    transition:transform .3s ease;
+  }
+  .brand:hover .mono{ transform:rotate(0deg); }
+  .brand .name-full span{ color:var(--accent); }
+ 
+  /* --- Links centrais (pill + indicador deslizante) ---------- */
+  .nav-links{
+    position:relative;
+    display:flex; align-items:center; gap:2px;
+    background:var(--bg-elev);
+    border:1px solid var(--line);
+    padding:4px; border-radius:999px;
+  }
+  .nav-link{
+    position:relative; z-index:2;
+    padding:9px 18px !important;
+    font-size:.9rem; font-weight:500;
+    color:var(--ink-dim) !important;
+    border-radius:999px;
+    transition:color .25s ease;
+    white-space:nowrap;
+  }
+  .nav-link:hover{ color:var(--ink) !important; }
+  .nav-link.active{ color:#fff !important; }
+  .nav-indicator{
+    position:absolute; z-index:1; top:4px; bottom:4px; left:4px;
+    width:96px;
+    background:var(--accent);
+    border-radius:999px;
+    transition:transform .35s cubic-bezier(.65,0,.35,1), width .35s cubic-bezier(.65,0,.35,1);
+  }
+ 
+  /* --- Ações à direita --------------------------------------- */
+  .icon-btn{
+    width:40px; height:40px;
+    display:flex; align-items:center; justify-content:center;
+    background:transparent; border:1px solid var(--line);
+    border-radius:10px; color:var(--ink);
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .icon-btn:hover{ border-color:var(--accent); transform:translateY(-1px); }
+  .icon-btn:focus-visible, .cta:focus-visible, .nav-link:focus-visible{
+    outline:2px solid var(--accent); outline-offset:2px;
+  }
+ 
+  .cta{
+    display:flex; align-items:center; gap:8px;
+    padding:10px 20px !important;
+    background:var(--accent); color:#FFFFFF !important;
+    font-weight:600; font-size:.88rem;
+    border:none; border-radius:10px;
+    text-decoration:none;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .cta:hover{ transform:translateY(-1px); box-shadow:0 8px 20px -6px color-mix(in srgb, var(--accent) 60%, transparent); }
+  .cta i{ font-size:.78rem; transition:transform .25s ease; }
+  .cta:hover i{ transform:translateX(3px); }
+ 
+  /* --- Wrapper interno: layout flex, sem interferir no display
+         que o Bootstrap usa pra abrir/fechar o #navCollapse ------ */
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    gap:20px;
+  }
+  .nav-actions{ display:flex; align-items:center; gap:10px; flex:none; }
+ 
+  /* --- Toggler mobile (substitui o ícone padrão do Bootstrap) - */
+  .navbar-toggler{
+    width:40px; height:40px; padding:0 !important;
+    display:flex; align-items:center; justify-content:center;
+    background:transparent; border:1px solid var(--line) !important;
+    border-radius:10px; color:var(--ink);
+    box-shadow:none !important;
+  }
+  .navbar-toggler i{ font-size:1rem; }
+ 
+  /* --- Painel colapsável no mobile ----------------------------- */
+  @media (max-width:991.98px){
+    #navCollapse{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--bg-elev);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 16px 32px -12px rgba(0,0,0,.4);
+      padding:12px 24px 24px;
+      max-height:calc(100vh - var(--nav-h));
+      overflow-y:auto;
+    }
+    .nav-inner{
+      flex-direction:column; align-items:stretch;
+      gap:0;
+    }
+    .nav-links{
+      width:100%;
+      flex-direction:column; align-items:stretch;
+      background:transparent; border:none;
+      padding:4px 0 0; margin:0;
+      gap:0;
+    }
+    .nav-links li{ width:100%; }
+    .nav-link{ display:block; padding:14px 4px !important; border-bottom:1px solid var(--line); border-radius:0; }
+    .nav-link.active{ color:var(--accent) !important; }
+    .nav-indicator{ display:none; }
+ 
+    .nav-actions{
+      flex-direction:column; align-items:stretch;
+      gap:12px; margin-top:16px;
+    }
+    .icon-btn{ width:100%; height:44px; gap:8px; }
+    .icon-btn::after{ content:"Tema"; font-size:.85rem; font-weight:500; }
+    .cta{ width:100%; justify-content:center; padding:13px 20px !important; }
+  }
