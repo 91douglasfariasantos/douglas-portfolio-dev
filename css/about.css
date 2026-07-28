@@ -1,0 +1,16 @@
+.title-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--bs-primary);
+    border-radius: 2px;
+    margin-top: 8px;
+    color: white;
+}
+
+.fs-7 {
+    font-size: 0.85rem;
+}
+
+.tracking-wider {
+    letter-spacing: 1px;
+}
