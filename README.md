@@ -7,7 +7,7 @@ Uma aplicação web moderna, responsiva e de alta performance desenvolvida para 
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap 5" />
-  <img src="https://img.shields.io/badge/Font_Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white" alt="Font-end" />
+  <img src="[https://img.shields.io/badge/Font_Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white](https://img.shields.io/badge/Front--End-0EA5E9?style=for-the-badge&logo=googlechrome&logoColor=white)" alt="Font-end" />](https://img.shields.io/badge/Front--End-0EA5E9?style=for-the-badge&logo=googlechrome&logoColor=white)
   <img src="https://img.shields.io/badge/Google_Fonts-4285F4?style=for-the-badge&logo=googlefonts&logoColor=white" alt="Google Fonts" />
 </div>
 
