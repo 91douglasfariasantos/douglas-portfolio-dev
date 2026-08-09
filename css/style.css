@@ -173,6 +173,11 @@ body {
   outline-offset: 2px;
 }
 
+#stack i:hover,
+#stack .p-3:hover i {
+    transform: scale(1.2) translateY(-3px);
+}
+
 .cta {
   display: flex;
   align-items: center;
