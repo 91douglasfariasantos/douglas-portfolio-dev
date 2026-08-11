@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("sobre-container", "./components/sobre.html");
   loadComponent("stack-container", "./components/stack.html");
   loadComponent("servicos-container", "./components/servicos.html");
+  loadComponent("projects-container", "./components/projects.html");
   loadComponent("contato-container", "./components/contato.html");
 });
 
